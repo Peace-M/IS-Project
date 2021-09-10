@@ -8,19 +8,51 @@ require "header.php";
         background-image: url("");
 
     }
-    .container{
-        width: 300px;
+    .container {
+        width: 500px;
         border-radius: 20px;
-        height: 600px;
+        height: 650px;
         background-color: indianred;
+        padding:5px 5px 0px 10px ;
     }
+    
     .botn{
        text-align: center;
     }
+    
 </style>
-<section class="container">
-<form action="Includes/signup.inc.php" method="POST">
-        <h2>SignUp</h2>
+<section class="container ">
+    <div class="form">
+    <form action="Includes/signup.inc.php" method="POST">
+        <h2>SignUp</h2><?php
+       if (isset($_GET["error"])) {
+          if ($_GET["error"] =="emptyinput") {
+              echo"<p>fill in all fields!</p>";
+          }
+          else if ($_GET["error"] =="char") {
+            echo"<p>You used invalid characters!</p>";
+          }
+          else if ($_GET["error"] =="invalidusername") {
+            echo"<p>Choose proper username!</p>";
+          }
+          else if ($_GET["error"] =="usernametaken") {
+            echo"<p>Username already taken. Choose another one!</p>";
+          }
+          else if ($_GET["error"] =="invalidemail") {
+            echo"<p>Write a proper email!</p>";
+          }
+          else if ($_GET["error"] =="passwordsdonotmatch") {
+            echo"<p>Passwords do not match!</p>";
+          }
+          
+          else if ($_GET["error"] =="stmtfailed") {
+            echo"<p>something went wrong!</p>";
+          }
+          else if ($_GET["error"] =="none") {
+            echo"<p>You've  signed up!</p>";
+          }
+       }
+        ?>
         <label for="first">Enter your Firstname :</label>
        <?php
         if (isset($_GET['first'])) {
@@ -71,26 +103,18 @@ require "header.php";
         <br>
         <div class="botn">
         <button type="submit"  class="btn btn-secondary" name="submit">Sign Up</button>
+        <p>Already have an account <a href="login.php">Login Here</a></p>
+        
         </div>
+        
     </form>
+    </div>
 
-</section>
+        <div class="errors">
+       
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+   </section>
 
 
 

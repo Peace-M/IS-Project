@@ -26,11 +26,11 @@ if (isset($_POST['submit'])) {
         exit();
     }
     if (invalidUsername($username) !== false) {
-        header("location:  ../signup.php?error=ivalidusername");
+        header("location:  ../signup.php?error=ivalidusername&first=$first&last=$last");
         exit();
     }
     if (usernameExists($conn, $username) !== false) {
-        header("location:  ../signup.php?error=usernametaken");
+        header("location:  ../signup.php?error=usernametaken&first=$first&last=$last");
         exit();
     }
     if (invalidEmail($email) !== false) {

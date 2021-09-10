@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,18 +48,28 @@
             <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link" href="signup.php">Sign Up</a>
+                    <a class="nav-link" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="footer.php">About</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <?php
+             if (isset($_SESSION["customer_id"])) {
+                echo "<li class='nav-item'>
+                <a class='nav-link'  href='appointments.php'>Appointments</a></li>";
+                echo "<li class='nav-item'>
+                <a class='nav-link'  href='includes/logout.inc.php'>Logout</a></li>";
+            }else {
+                echo "<li class='nav-item'>
+                <a class='nav-link'  href='signup.php'>Signup</a></li>";
+               
+            }
+            ?>
             </ul>
 
 

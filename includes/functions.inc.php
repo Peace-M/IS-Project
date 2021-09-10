@@ -103,3 +103,40 @@ function createUser($conn, $first,$last, $email, $username, $pwd){
 
 
 }
+// Login
+function emptyInputLogin( $username,  $pwd){
+    
+    if ( empty($username) ||  empty($pwd)  ) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+
+}
+function loginUser( $conn, $username,  $pwd){
+    $usernameExists = usernameExists ($conn, $username);
+
+    if ($usernameExists === false) {
+        header("location:  ../login.php?error=wronglogin");
+        exit();
+    }
+
+    $hashedPwd = $usernameExists["customer_password"];
+    $checkPwd = password_verify($pwd, $hashedPwd );
+
+    if ($checkPwd === false) {
+        header("location:  ../login.php?error=wronglogin");
+        exit();
+    }
+    elseif ($checkPwd === true) {
+      session_start();
+      $_SESSION["customer_id"] = $usernameExists["customer_id"];
+      $_SESSION["customer_username"] = $usernameExists["customer_username"];
+      header("location:  ../index.php");
+        exit();
+    }
+    
+    
+}

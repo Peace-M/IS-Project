@@ -1,33 +1,30 @@
-<?php
-require "header.php";
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-    body {
-        padding-top: 60px;
-        background-image: url("");
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    }
-    .container {
-        width: 500px;
-        border-radius: 20px;
-        height: 670px;
-        background-color: indianred;
-        padding:5px 5px 0px 10px ;
-    }
-    
-    .botn{
-       text-align: center;
-    }
-    .sty{
-      color: black;
-      font-size: x-large;
-      font-family: sans-serif;
-    }
-    
-</style>
-<section class="container ">
-    <div class="form">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="">
+
+    <title> Salon Operations Management</title>
+</head>
+<body>
+<section class="container">
+    <div>
     <form action="Includes/signup.inc.php" method="POST">
         <h2>SignUp</h2><?php
        if (isset($_GET["error"])) {
@@ -36,12 +33,6 @@ require "header.php";
           }
           else if ($_GET["error"] =="char") {
             echo"<p>You used invalid characters!</p>";
-          }
-          else if ($_GET["error"] =="invalidusername") {
-            echo"<p>Choose proper username!</p>";
-          }
-          else if ($_GET["error"] =="usernametaken") {
-            echo"<p>Username already taken. Choose another one!</p>";
           }
           else if ($_GET["error"] =="invalidemail") {
             echo"<p>Write a proper email!</p>";
@@ -76,16 +67,8 @@ require "header.php";
             echo '<input type="text" class="form-control" name="last" >';
         } 
         echo "<br>";
-        echo "<label for='username'>Enter Username :</label>";
-
-        if (isset($_GET['username'])) {
-            $username = $_GET['username'];
-            echo ' <input type="text" name="username" class="form-control" value = "' . $username . '">';
-        }
-         else {
-            echo ' <input type="text" name="username" class="form-control">';
-        }
-        echo "<br>";
+        
+        
         echo "<label for='email'>Enter your E-mail:</label>";
 
         if (isset($_GET['email'])) {
@@ -106,24 +89,29 @@ require "header.php";
         <label for="pwd2">Confirm your password :</label>
         <input type="password" class="form-control" name="pwd2" >
         <br>
+        <?php
+        echo "<label for='salonname'>Enter  name of salon :</label>";
+
+        if (isset($_GET['salonname'])) {
+            $username = $_GET['salonname'];
+            echo ' <input type="text" name="salonname" class="form-control" value = "' . $salonname . '">';
+        }
+         else {
+            echo ' <input type="text" name="salonname" class="form-control">';
+        }
+        ?>
+        <br>
         <div class="botn">
         <button type="submit"  class="btn btn-secondary" name="submit">Sign Up</button>
         <p>Already have an account <a href="login.php">Login Here</a></p>
-        <p><a  class="sty" href="stylist/signup.php">Signup and Signin as Stylist</a></p>
+        
         
         </div>
         
     </form>
     </div>
 
-        <div class="errors">
-       
-
-        </div>
-   </section>
-
-
-
-<?php
-require "footer.php";
-?>
+</section>
+    
+</body>
+</html>

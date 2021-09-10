@@ -8,7 +8,7 @@ include "header.php";
         position: relative;
         margin: 100px auto;
         width: 370px;
-        height: 315px;
+        height: 360px;
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
         border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -20,14 +20,26 @@ include "header.php";
 
     .botn {
         text-align: center;
+        color: black;
+    }
+    button{
+        background-color: black;
+        color: white;
+        width: 150px;
+        border-radius: 30px;
+    }
+    p{
+        font-family: sans-serif;
+        font-size: large;
     }
 </style>
 <section class="container ">
 
     <div class="signup">
         <form class="form-login" action="includes/login.inc.php" method="POST">
-            <h2 class="h2">Login</h2>
-
+        <i class="fas fa-users" style="font-size:120px;color:navy blue;padding:0px 0px 0px 100px "></i>
+        <br>
+            
 
             <label for="username">Enter your username :</label>
             <input type="text" class="form-control" name="username">
@@ -41,7 +53,7 @@ include "header.php";
                 <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyinput") {
-                        echo "<p>fill in all fields!</p> ";
+                        echo "<p>Fill in all Fields!</p> ";
                     } else if ($_GET["error"] == "wronglogin") {
                         echo "<p>Incorrect Login details!</p> ";
                     }

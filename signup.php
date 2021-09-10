@@ -19,6 +19,9 @@ require "header.php";
     .botn{
        text-align: center;
     }
+    button{
+      width: 150px;
+    }
     .sty{
       color: black;
       font-size: x-large;

@@ -14,9 +14,9 @@ function emptyInputSignup($first, $last, $email, $pwd, $pwd2 , $salonname){
     return $result;
 
 }
-function invalidCharacters($first, $last, $salonname){
+function invalidCharacters($first, $last){
     
-    if (!preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last) || !preg_match("/^[a-zA-Z]*$/", $salonname))  {
+    if (!preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last) )  {
         $result = true;
     }
     else {
@@ -51,7 +51,7 @@ function createStylist($conn, $first,$last, $email, $pwd, $salonname){
     $sql = "INSERT INTO stylists (stylist_firstname,stylist_lastname,stylist_email,stylist_password,salon_name) VALUES (?,?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!Mysqli_stmt_prepare($stmt, $sql)) {
-        header("location:  ../signup.php?error=Stmtfailed");
+        header("location:  ../signup.php?error=stmtfailed");
         exit();
     }
 

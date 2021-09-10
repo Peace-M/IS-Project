@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         header("location:  ../signup.php?error=emptyinput");
         exit();
     }
-    if (invalidCharacters($first, $last, $salonname) !== false) {
+    if (invalidCharacters($first, $last) !== false) {
         header("location:  ../signup.php?error=char");
         exit();
     }

@@ -35,7 +35,7 @@ require "header.php";
         <h2>SignUp</h2><?php
        if (isset($_GET["error"])) {
           if ($_GET["error"] =="emptyinput") {
-              echo"<p>fill in all fields!</p>";
+              echo"<p>Fill in all fields!</p>";
           }
           else if ($_GET["error"] =="char") {
             echo"<p>You used invalid characters!</p>";
@@ -111,7 +111,7 @@ require "header.php";
         <br>
         <div class="botn">
         <button type="submit"  class="btn btn-secondary" name="submit">Sign Up</button>
-        <p>Already have an account <a href="login.php">Login Here</a></p>
+        <p>Already have an account?<a href="login.php">Login Here</a></p>
         <p><a  class="sty" href="stylist/signup.php">Signup and Signin as Stylist</a></p>
         
         </div>

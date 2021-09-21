@@ -17,6 +17,9 @@ require "header.php";
           else if ($_GET["error"] =="char") {
             echo"<p>You used invalid characters!</p>";
           }
+          else if ($_GET["error"] =="usernametaken") {
+            echo"<p>Username already taken. Choose another one!</p>";
+          }
           else if ($_GET["error"] =="invalidemail") {
             echo"<p>Write a proper email!</p>";
           }
@@ -50,8 +53,16 @@ require "header.php";
             echo '<input type="text" class="form-control" name="last" >';
         } 
         echo "<br>";
-        
-        
+        echo "<label for='username'>Enter Username :</label>";
+
+        if (isset($_GET['username'])) {
+            $username = $_GET['username'];
+            echo ' <input type="text" name="username" class="form-control" value = "' . $username . '">';
+        }
+         else {
+            echo ' <input type="text" name="username" class="form-control">';
+        }
+        echo "<br>";
         echo "<label for='email'>Enter your E-mail:</label>";
 
         if (isset($_GET['email'])) {
@@ -86,7 +97,7 @@ require "header.php";
         <br>
         <div class="botn">
         <button type="submit"  class="btn btn-secondary" name="submit">Sign Up</button>
-        <p>Already have an account <a href="login.php">Login Here</a></p>
+        <p>Already have an account? <a href="login.php">Login Here</a></p>
         
         
         </div>

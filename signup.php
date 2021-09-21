@@ -8,12 +8,13 @@ require "header.php";
         background-image: url("");
 
     }
-    .container {
+    .me {
         width: 500px;
         border-radius: 20px;
-        height: 670px;
+        height: 710px;
         background-color: indianred;
         padding:5px 5px 0px 10px ;
+        background-image: url(images);
     }
     
     .botn{
@@ -29,9 +30,9 @@ require "header.php";
     }
     
 </style>
-<section class="container ">
+<section class="container me ">
     <div class="form">
-    <form action="Includes/signup.inc.php" method="POST">
+    <form class="mx-1 mx-md-4" action="Includes/signup.inc.php" method="POST">
         <h2>SignUp</h2><?php
        if (isset($_GET["error"])) {
           if ($_GET["error"] =="emptyinput") {
@@ -89,6 +90,7 @@ require "header.php";
             echo ' <input type="text" name="username" class="form-control">';
         }
         echo "<br>";
+        
         echo "<label for='email'>Enter your E-mail:</label>";
 
         if (isset($_GET['email'])) {
@@ -117,12 +119,7 @@ require "header.php";
         </div>
         
     </form>
-    </div>
-
-        <div class="errors">
-       
-
-        </div>
+   
    </section>
 
 

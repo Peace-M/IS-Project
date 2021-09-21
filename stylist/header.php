@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +25,11 @@
     <title> Salon Operations Management</title>
 </head>
 <body>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+    </style>
     <nav>
 
     </nav>

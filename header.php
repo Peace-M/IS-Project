@@ -32,7 +32,7 @@
     <style type="text/css">
     body {
         padding-top: 60px;
-        background-image: url("");
+        background-color: black;
 
     }
 

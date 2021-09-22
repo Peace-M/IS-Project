@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +27,56 @@
     <title> Salon Operations Management</title>
 </head>
 <body>
-    <style>
+<style type="text/css">
+        body {
+            padding-top: 60px;
+
+        }
         body{
-            background-color: lightgray;
+            /* background-image: url(../images/aesthetic.jpg); */
+            background-color: grey;
+            background-size: cover;
         }
     </style>
-    <nav>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
 
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.jpg" alt="Logo" style="width:40px;">
+            </a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <?php
+                if (isset($_SESSION["stylist_id"])) {
+                    echo "<li class='nav-item'>
+                    <a class='nav-link'  href='salon.register.php'>Register salon</a></li>";
+                    
+                    echo "<li class='nav-item'>
+                <a class='nav-link'  href='.php'>Bookings</a></li>";
+                    echo "<li class='nav-item'>
+                <a class='nav-link'  href='includes/logout.inc.php'>Logout</a></li>";
+                } else {
+                    echo "<li class='nav-item'>
+                <a class='nav-link'  href='signup.php'>Signup</a></li>";
+                }
+                ?>
+                
+            </ul>
+
+       </div>
     </nav>
-    
     <div>

@@ -3,6 +3,10 @@ require "header.php";
 ?>
 
     <style type="text/css">
+    .container{
+        border: borderbox;
+        width: 400px;
+    }
 
 
     </style>

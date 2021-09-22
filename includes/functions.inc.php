@@ -134,6 +134,8 @@ function loginUser( $conn, $username,  $pwd){
       session_start();
       $_SESSION["customer_id"] = $usernameExists["customer_id"];
       $_SESSION["customer_username"] = $usernameExists["customer_username"];
+      $_SESSION["customer_firstname"] = $usernameExists["customer_firstname"];
+
       header("location:  ../index.php");
         exit();
     }

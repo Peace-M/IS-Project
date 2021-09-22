@@ -12,7 +12,7 @@ require "header.php";
         width: 500px;
         border-radius: 20px;
         height: 710px;
-        background-color: indianred;
+        background-color: grey;
         padding:5px 5px 0px 10px ;
         background-image: url(images);
     }
@@ -90,7 +90,7 @@ require "header.php";
             echo ' <input type="text" name="username" class="form-control">';
         }
         echo "<br>";
-        
+
         echo "<label for='email'>Enter your E-mail:</label>";
 
         if (isset($_GET['email'])) {

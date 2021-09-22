@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,26 +30,25 @@
 
 <body>
     <style type="text/css">
-    body {
-        padding-top: 60px;
-        background-color: black;
+        body {
+            padding-top: 60px;
+           
 
-    }
-
+        }
     </style>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="" alt="Logo" style="width:40px;">
+                <img src="images/logo.jpg" alt="Logo" style="width:40px;">
             </a>
 
             <!-- Links -->
             <ul class="navbar-nav">
-            <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
@@ -60,17 +59,20 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <?php
-             if (isset($_SESSION["customer_id"])) {
-                echo "<li class='nav-item'>
+                if (isset($_SESSION["customer_id"])) {
+                    echo "<li class='nav-item'>
+                    <a class='nav-link'  href='salons.php'>salons</a></li>";
+                    
+                    echo "<li class='nav-item'>
                 <a class='nav-link'  href='appointments.php'>Appointments</a></li>";
-                echo "<li class='nav-item'>
+                    echo "<li class='nav-item'>
                 <a class='nav-link'  href='includes/logout.inc.php'>Logout</a></li>";
-            }else {
-                echo "<li class='nav-item'>
+                } else {
+                    echo "<li class='nav-item'>
                 <a class='nav-link'  href='signup.php'>Signup</a></li>";
-               
-            }
-            ?>
+                }
+                ?>
+                
             </ul>
 
 

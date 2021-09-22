@@ -2,6 +2,7 @@
 include "header.php";
 ?>
 <style>
+   
    .y{
       background-color: black;
       height: 500px;
@@ -37,10 +38,10 @@ include "header.php";
      font-size: 75px;
    }
    </style>
-<section >
+<section class="main">
 
 <div class="jumbotron text-center y">
-<h1>Beauty Centre </h1>
+<h1>P&E </h1>
   
 </div>
 <br>

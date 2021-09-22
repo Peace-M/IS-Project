@@ -91,6 +91,9 @@ require "header.php";
 
                     <button type="submit" class="btn btn-secondary" name="submit">Register</button>
 
+                    <br>
+                    <a href="index.php">back</a>
+
                 </div>
             </div>
             

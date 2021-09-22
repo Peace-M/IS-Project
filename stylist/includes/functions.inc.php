@@ -124,7 +124,7 @@ function loginUser( $conn, $username, $pwd){
       session_start();
       $_SESSION["stylist_id"] = $usernameExists["stylist_id"];
       $_SESSION["stylist_username"] = $usernameExists["stylist_username"];
-      header("location:  ../salon.register.php");
+      header("location:  ../index.php");
         exit();
     }
 }

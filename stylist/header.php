@@ -42,7 +42,7 @@ session_start();
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="images/logo.jpg" alt="Logo" style="width:40px;">
+                <img src="../images/logo.jpg" alt="Logo" style="width:40px;">
             </a>
 
             <!-- Links -->
@@ -58,7 +58,7 @@ session_start();
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <?php
                 if (isset($_SESSION["stylist_id"])) {
@@ -68,7 +68,7 @@ session_start();
                     echo "<li class='nav-item'>
                 <a class='nav-link'  href='.php'>Bookings</a></li>";
                     echo "<li class='nav-item'>
-                <a class='nav-link'  href='includes/logout.inc.php'>Logout</a></li>";
+                <a class='nav-link'  href='includes/logout.inc.php'>Logout <i class='fas fa-power-off left'></i></a></li>";
                 } else {
                     echo "<li class='nav-item'>
                 <a class='nav-link'  href='signup.php'>Signup</a></li>";

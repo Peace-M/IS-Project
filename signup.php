@@ -12,9 +12,10 @@ require "header.php";
         width: 500px;
         border-radius: 20px;
         height: 710px;
-        background-color: grey;
+        background-color: linen;
         padding:5px 5px 0px 10px ;
         background-image: url(images);
+        margin-top: 20px;
     }
     
     .botn{

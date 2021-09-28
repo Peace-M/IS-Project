@@ -142,3 +142,61 @@ function loginUser( $conn, $username,  $pwd){
     
     
 }
+
+//booking
+function emptyInputAppointment( $date,$time,$pay  ){
+    
+    if ( empty($date) ||  empty($time) ||  empty($pay)  ) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+
+}
+
+function createSalon($conn,$date,$time,$pay){
+    $sql = "INSERT INTO appointments(appointment_date,appointment_time,appointment_pay) VALUES (?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!Mysqli_stmt_prepare($stmt, $sql)) {
+        header("location:  ../booking.php?error=Stmtfailed");
+        exit();
+    }
+
+    
+    mysqli_stmt_bind_param($stmt, "sss",$date,$time,$pay );
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location:  ../index.php?error=none");
+    exit();
+    
+
+
+}
+// function appointmentExists ($conn, $date,$time,$pay){
+//     $sql = "SELECT * FROM appointments WHERE (appointment_date,appointment_time,appointment_pay) VALUES(?,?,?) ;";
+//     $stmt = mysqli_stmt_init($conn);
+//     if (!Mysqli_stmt_prepare($stmt, $sql)) {
+//         header("location:  ../booking.php?error=Stmtfaileddd");
+//         exit();
+//     }
+
+
+//     mysqli_stmt_bind_param($stmt, "sss", $date,$time,$pay );
+//     mysqli_stmt_execute($stmt);
+
+//     $resultData = mysqli_stmt_get_result($stmt);
+
+//     if ($row = mysqli_fetch_assoc( $resultData)) {
+//       return $row;
+//     }
+//     else {
+//         $result = false;
+//         return $result;
+//     }
+
+//     mysqli_stmt_close($stmt);
+
+
+// }

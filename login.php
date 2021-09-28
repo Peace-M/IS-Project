@@ -15,6 +15,7 @@ include "header.php";
         border-left: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.8);
         border-radius: 30px;
+        background-color: linen;
 
     }
 

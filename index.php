@@ -6,24 +6,24 @@ include "header.php";
    .y{
       background-color: black;
       height: 500px;
-      background-image: url(images/Makeupbrushes.jpg);
+      background-image: url(images/salon.jpg);
       background-size: cover;
       padding-top: 400px;
    }
    .f{
-      background-image: url(images/haircurl.jpg);
+      background-image: url(images/spray.png);
       background-size: cover;
       height: 200px;
 
    }
    .s{
-      background-image: url(images/plaiting.png);
+      background-image: url(images/wow.png);
       background-size: cover;
       height: 200px;
 
    }
    .t{
-      background-image: url(images/relaxing.png);
+      background-image: url(images/hotstone.png);
       background-size: cover;
       height: 200px;
 
@@ -36,6 +36,7 @@ include "header.php";
    }
    h1{
      font-size: 75px;
+     color: lightpink;
    }
    </style>
 <section class="main">

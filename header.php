@@ -31,7 +31,8 @@ session_start();
 <body>
     <style type="text/css">
         body {
-            padding-top: 60px;
+            padding-top: 80px;
+            background-color: grey;
            
 
         }

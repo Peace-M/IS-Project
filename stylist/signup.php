@@ -6,6 +6,9 @@ require "header.php";
     .container{
         border: borderbox;
         width: 400px;
+        background-color: white;
+        margin-top: 30px;
+        border-radius: 10px;
     }
 
 

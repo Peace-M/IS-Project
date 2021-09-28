@@ -23,7 +23,7 @@ require "header.php";
 <section class="container-fluid main ">
     <section class="container  form">
         <form action="includes/services.inc.php" method="post">
-            <h3>Register your Salon</h3>
+            <h3>Register your Salon's Services</h3>
             <?php
             if (isset($_GET["error"])) {
                 if ($_GET["error"] == "emptyinput") {
